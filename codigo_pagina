@@ -1,0 +1,23 @@
+pip install selenium
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from bs4 import BeautifulSoup
+import pandas as pd
+import re
+import os
+
+from selenium import webdriver
+option = webdriver.ChromeOptions()
+option.add_argument(' — incognito')
+
+browser = webdriver.Chrome(executable_path ='C:/Users/fatylk/Desktop/chromedriver_win32/chromedriver.exe', chrome_options=option)
+browser.get ('http://www.puertos.es/es-es/oceanografia/Paginas/portus.aspx')
+
+oleaje='label[class="form-check-label lightable"]'
+desp_ol = browser.find_element_by_selector(oleaje)
+click_ol=desp_ol.click()
+
+
+
+
