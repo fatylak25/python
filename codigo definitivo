@@ -1,10 +1,11 @@
 from selenium import webdriver 
 from selenium.webdriver.common.keys import Keys
-
+import time
 class DataBot:
 	def __init__(self,data):
 		self.data = data
-		self.bot = webdriver.Firefox()
+		self.bot = webdriver.Firefox(executable_path="C:/Users/fatim/Downloads/geckodriver/geckodriver.exe")
+
 
 
 	def scraper(self):
@@ -15,7 +16,18 @@ class DataBot:
 		field.clear()
 
 		field.send_keys(self.data)
-
+		time.sleep(15)
+		malva=bot.find_element_by_xpath('//*[@id="no-bootstrap"]/div[2]/div')
+		malva.click()
+		time.sleep(10)
+		ocultar=bot.find_element_by_xpath('//*[@id="no-bootstrap"]/div[2]/div/div[1]/img[1]')
+		ocultar.click()
+		time.sleep(5)
+		ol=bot.find_element_by_xpath('//*[@id="app"]/div[2]/div/div[2]/div/div/div/div/div/div[1]/label')
+		ol.click()
+		time.sleep(5)
+		
 if __name__ == '__main__':
-	ed = DataBot("valencia")
+	ed = DataBot("Malvarrosa")
 	ed.scraper()
+	ed.oleaje(bot)
