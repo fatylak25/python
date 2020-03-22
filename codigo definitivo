@@ -30,4 +30,4 @@ class DataBot:
 if __name__ == '__main__':
 	ed = DataBot("Malvarrosa")
 	ed.scraper()
-	ed.oleaje(bot)
+	
